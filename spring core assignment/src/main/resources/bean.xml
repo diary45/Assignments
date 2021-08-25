@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="hello" class="Question1.HelloBean">
+
+        <constructor-arg type="int" value="6" ></constructor-arg>
+        <constructor-arg value=" CEO"></constructor-arg>
+        <constructor-arg value="vishnu D vardhan"  ></constructor-arg>
+    </bean>
+
+
+    <bean id="triangle" class="Question1.triangle">
+    </bean>
+
+    <bean id="address1" class="Question1.Address">
+        <property name="street" value="manikya nagar"></property>
+        <property name="city" value="hyderabad"></property>
+        <property name="state" value="Telangana"></property>
+        <property name="zip" value="500054"></property>
+        <property name="country" value="=INDIA"></property>
+    </bean>
+    <bean id="cus1" class="Question1.Customer">
+        <property name="cusID"  value="123" ></property>
+        <property name="cuscontact" value="7989973883"></property>
+        <property name="cusname" value="vishnu"></property>
+        <property name="cusAddress" ref="address"></property>
+
+
+    </bean>
+    <bean id="address" class="Question1.Address">
+        <constructor-arg name="city" value="Hyderabad"></constructor-arg>
+        <constructor-arg name="state" value="AP" ></constructor-arg>
+        <constructor-arg name="zip" value="55"></constructor-arg>
+        <constructor-arg name="country" value="india"></constructor-arg>
+        <constructor-arg name="street" value="maiky"></constructor-arg>
+
+    </bean>
+    <bean id="question" class="Question2.Question_a">
+        <property name="questionID" value="1"></property>
+        <property name="question" value="What is your name"></property>
+        <property name="Answers">
+            <list>
+                <value>vishnu</value>
+                <value>mohan</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="questionb" class="Question2.Question_b">
+        <property name="questionID" value="1"></property>
+        <property name="question" value="What is your name"></property>
+        <property name="Answers">
+            <set>
+                <value>vishnu</value>
+                <value>mohan</value>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="questionc" class="Question2.Question_c">
+        <property name="questionID" value="1"></property>
+        <property name="question" value="What is your name"></property>
+        <property name="Answers">
+            <map>
+                <entry value="vishnu" key="1"></entry>
+                <entry value="mohan" key="2"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="account" class="Question3.BankAccount" scope="singleton">
+        <property name="accountHolderName" value=""></property>
+        <property name="accountType" value="savings"></property>
+        <property name="accountBalance" value="0"></property>
+        <property name="accountID" value="0"></property>
+
+    </bean>
+
+    <bean id="repository" class="Question3.BankAccountRepositoryImpl" autowire="byType" >
+        <property name="accounts" >
+            <list>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+                <ref bean="account"></ref>
+
+
+
+
+            </list>
+        </property>
+
+
+    </bean>
+
+
+
+
+
+
+</beans>
