@@ -1,0 +1,44 @@
+<html >
+    <head>
+        <meta http-equiv="" content="1" >
+    </head>
+
+    <body>
+        <script src="ques19.js">
+
+        </script>
+        <table border="1">
+            <form name="form" onsubmit="return false">
+            <tr>
+
+                <td colspan="4" rowspan="1"><input type="text" name="result" ></td>
+            </tr>
+            <tr>
+                <td><input type="button" value="1" onclick="form.result.value+='1'"></td>
+                <td><button value="2" onclick="form.result.value+=this.value">2</button></td>
+                <td><button value="3" onclick="form.result.value+=this.value">3</button></td>
+                <td><button value="+" onclick="form.result.value+=this.value">+</button></td>
+            </tr>
+            <tr>
+                <td><button value="4" onclick="form.result.value+=this.value">4</button></td>
+                <td><button value="5" onclick="form.result.value+=this.value">5</button></td>
+                <td><button value="6" onclick="form.result.value+=this.value">6</button></td>
+                <td><button value="-" onclick="form.result.value+=this.value">-</button></td>
+            </tr>
+            <tr>
+                <td><button value="7" onclick="form.result.value+=this.value">7</button></td>
+                <td><button value="8" onclick="form.result.value+=this.value">8</button></td>
+                <td><button value="9" onclick="form.result.value+=this.value">9</button></td>
+                <td><button value="*" onclick="form.result.value+=this.value">*</button></td>
+            </tr>
+            <tr>
+                <td><button value="/" onclick="form.result.value+=this.value">/</button></td>
+                <td><button value="0" onclick="form.result.value+=this.value">0</button></td>
+                <td><button value="%" onclick="form.result.value+=this.value">%</button></td>
+                <td><button value="=" onclick="form.result.value=eval(form.result.value)">=</button></td>
+            </tr>
+        </form>
+        </table>
+        
+    </body>
+</html>
